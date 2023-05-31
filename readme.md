@@ -1,4 +1,4 @@
-# decompress-targz [![CI](https://github.com/kevva/decompress-targz/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/kevva/decompress-targz/actions/workflows/ci.yml)
+# decompress-targz [![CI](https://github.com/XhmikosR/decompress-targz/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/XhmikosR/decompress-targz/actions/workflows/ci.yml)
 
 > tar.gz decompress plugin
 
@@ -6,15 +6,15 @@
 ## Install
 
 ```sh
-npm install decompress-targz
+npm install @xhmikosr/decompress-targz
 ```
 
 
 ## Usage
 
 ```js
-import decompress from 'decompress';
-import decompressTargz from 'decompress-targz';
+import decompress from '@xhmikosr/decompress';
+import decompressTargz from '@xhmikosr/decompress-targz';
 
 decompress('unicorn.tar.gz', 'dist', {
 	plugins: [

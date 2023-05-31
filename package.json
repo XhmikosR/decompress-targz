@@ -1,9 +1,12 @@
 {
-	"name": "decompress-targz",
+	"name": "@xhmikosr/decompress-targz",
 	"version": "4.1.1",
 	"description": "decompress tar.gz plugin",
 	"license": "MIT",
-	"repository": "kevva/decompress-targz",
+	"repository": "XhmikosR/decompress-targz",
+	"publishConfig": {
+		"access": "public"
+	},
 	"author": {
 		"name": "Kevin Mårtensson",
 		"email": "kevinmartensson@gmail.com",
