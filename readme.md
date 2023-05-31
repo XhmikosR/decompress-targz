@@ -1,20 +1,20 @@
-# decompress-targz [![Build Status](https://travis-ci.org/kevva/decompress-targz.svg?branch=master)](https://travis-ci.org/kevva/decompress-targz)
+# decompress-targz [![CI](https://github.com/kevva/decompress-targz/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/kevva/decompress-targz/actions/workflows/ci.yml)
 
 > tar.gz decompress plugin
 
 
 ## Install
 
-```
-$ npm install decompress-targz
+```sh
+npm install decompress-targz
 ```
 
 
 ## Usage
 
 ```js
-const decompress = require('decompress');
-const decompressTargz = require('decompress-targz');
+import decompress from 'decompress';
+import decompressTargz from 'decompress-targz';
 
 decompress('unicorn.tar.gz', 'dist', {
 	plugins: [

@@ -1,10 +1,11 @@
-'use strict';
-const zlib = require('zlib');
-const decompressTar = require('decompress-tar');
-const fileType = require('file-type');
-const isStream = require('is-stream');
+import {Buffer} from 'node:buffer';
+import zlib from 'node:zlib';
+import decompressTar from 'decompress-tar';
+import fileType from 'file-type';
+import {isStream} from 'is-stream';
 
-module.exports = () => input => {
+// eslint-disable-next-line import/no-anonymous-default-export
+export default () => input => {
 	if (!Buffer.isBuffer(input) && !isStream(input)) {
 		return Promise.reject(new TypeError(`Expected a Buffer or Stream, got ${typeof input}`));
 	}

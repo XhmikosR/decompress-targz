@@ -1,11 +1,12 @@
-import fs from 'fs';
-import path from 'path';
+import fs, {promises as fsP} from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
 import isJpg from 'is-jpg';
-import pify from 'pify';
 import test from 'ava';
-import m from '.';
+import m from './index.js';
 
-const fsP = pify(fs);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 test('extract file', async t => {
 	const buf = await fsP.readFile(path.join(__dirname, 'fixtures', 'file.tar.gz'));
@@ -31,15 +32,11 @@ test('return empty array if non-valid file is supplied', async t => {
 });
 
 test('throw on wrong input', async t => {
-	await t.throws(m()('foo'), 'Expected a Buffer or Stream, got string');
+	await t.throwsAsync(m()('foo'), undefined, 'Expected a Buffer or Stream, got string');
 });
 
-// Don't run this test on Node.js v4
-// https://github.com/nodejs/node/commit/80169b1f0a5f944b99e82a409536dea426c992f3
-if (!process.version.startsWith('v4')) {
-	test('handle gzip error', async t => {
-		const buf = await fsP.readFile(path.join(__dirname, 'fixtures', 'fail.tar.gz'));
-		const err = await t.throws(m()(buf), 'unexpected end of file');
-		t.is(err.code, 'Z_BUF_ERROR');
-	});
-}
+test('handle gzip error', async t => {
+	const buf = await fsP.readFile(path.join(__dirname, 'fixtures', 'fail.tar.gz'));
+	const error = await t.throwsAsync(m()(buf), undefined, 'unexpected end of file');
+	t.is(error.code, 'Z_BUF_ERROR');
+});
