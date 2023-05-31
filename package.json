@@ -38,7 +38,7 @@
 		"targz"
 	],
 	"dependencies": {
-		"decompress-tar": "^4.1.1",
+		"@xhmikosr/decompress-tar": "^5.0.0",
 		"file-type": "^12.4.2",
 		"is-stream": "^3.0.0"
 	},

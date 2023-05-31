@@ -1,6 +1,6 @@
 import {Buffer} from 'node:buffer';
 import zlib from 'node:zlib';
-import decompressTar from 'decompress-tar';
+import decompressTar from '@xhmikosr/decompress-tar';
 import fileType from 'file-type';
 import {isStream} from 'is-stream';
 
