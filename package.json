@@ -3,7 +3,10 @@
 	"version": "7.0.0",
 	"description": "decompress tar.gz plugin",
 	"license": "MIT",
-	"repository": "XhmikosR/decompress-targz",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/XhmikosR/decompress-targz.git"
+	},
 	"publishConfig": {
 		"access": "public"
 	},
@@ -38,7 +41,7 @@
 		"targz"
 	],
 	"dependencies": {
-		"@xhmikosr/decompress-tar": "^7.0.0",
+		"@xhmikosr/decompress-tar": "^8.0.0",
 		"file-type": "^19.0.0",
 		"is-stream": "^4.0.1"
 	},
