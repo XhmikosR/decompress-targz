@@ -41,9 +41,9 @@
 		"targz"
 	],
 	"dependencies": {
-		"@xhmikosr/decompress-tar": "^8.0.0",
+		"@xhmikosr/decompress-tar": "^8.0.1",
 		"file-type": "^19.0.0",
-		"is-stream": "^4.0.1"
+		"is-stream": "^2.0.1"
 	},
 	"devDependencies": {
 		"ava": "^6.1.2",
